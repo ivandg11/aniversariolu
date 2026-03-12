@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestra Historia</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" id="inicio">
+        <div class="hero__backdrop"></div>
+
+        <div class="hero__content">
+          <span class="hero__tag">Nuestro primer año</span>
+          <h1>
+            Un poco de nuestra historia y de nuestro primero año juntos...
+          </h1>
+          <p class="hero__text">
+            Y quiero recordar contigo cada momento que hemos compartido y todo
+            lo feliz que me haces cada dia.
+          </p>
+          <button class="hero__button" id="startStory" type="button">
+            Nuestra historia...
+          </button>
+        </div>
+
+        <div class="cassette-shell">
+          <button
+            class="cassette"
+            id="spotifyCassette"
+            type="button"
+            aria-expanded="false"
+          >
+            <span class="cassette__top">
+              <span class="cassette__label">14-03-2026</span>
+              <span class="cassette__hint">Toca el cassette</span>
+            </span>
+
+            <span class="cassette__body">
+              <span class="cassette__window">
+                <span class="cassette__reel cassette__reel--left"></span>
+                <span class="cassette__tape"></span>
+                <span class="cassette__reel cassette__reel--right"></span>
+              </span>
+
+              <span class="cassette__code">
+                <img
+                  src="cancion.jpg"
+                  alt="Codigo de Spotify para escanear nuestra cancion"
+                />
+              </span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="memories" id="recuerdos">
+        <div class="memories__header">
+          <span class="section-tag">Mapa de nuestros recuerdos</span>
+          <h2>Cada lugar guarda un pedacito de nosotros</h2>
+          <p>
+            Toca cada punto para ver la foto y leer por que ese momento es tan
+            especial para mi.
+          </p>
+        </div>
+
+        <div class="memory-layout">
+          <div class="memory-map">
+            <div class="memory-map__background"></div>
+
+            <button
+              class="memory-pin active"
+              type="button"
+              data-memory="0"
+              style="top: 15%; left: 28%"
+            >
+              <span>Primera cita</span>
+            </button>
+
+            <button
+              class="memory-pin"
+              type="button"
+              data-memory="1"
+              style="top: 27%; left: 71%"
+            >
+              <span>Navidad juntos</span>
+            </button>
+
+            <button
+              class="memory-pin"
+              type="button"
+              data-memory="2"
+              style="top: 42%; left: 52%"
+            >
+              <span>El Comienzo </span>
+            </button>
+
+            <button
+              class="memory-pin"
+              type="button"
+              data-memory="3"
+              style="top: 56%; left: 79%"
+            >
+              <span>Cena Familiar</span>
+            </button>
+
+            <button
+              class="memory-pin"
+              type="button"
+              data-memory="4"
+              style="top: 66%; left: 28%"
+            >
+              <span>6 Meses</span>
+            </button>
+
+            <button
+              class="memory-pin"
+              type="button"
+              data-memory="5"
+              style="top: 78%; left: 62%"
+            >
+              <span>Primer Viaje</span>
+            </button>
+
+            <button
+              class="memory-pin"
+              type="button"
+              data-memory="6"
+              style="top: 86%; left: 14%"
+            >
+              <span>Primera salida de Antro</span>
+            </button>
+          </div>
+
+          <article class="memory-card" id="memoryCard">
+            <div class="memory-card__media">
+              <img
+                id="memoryImage"
+                src="primera cita.png"
+                alt="Recuerdo juntos"
+              />
+            </div>
+
+            <div class="memory-card__content">
+              <div class="memory-card__label">Recuerdo destacado</div>
+              <h3 id="memoryTitle">Nuestra primera cita</h3>
+              <p class="memory-card__date" id="memoryDate">El inicio de todo</p>
+              <p id="memoryDescription">
+                Aqui comenzo esta historia tan bonita, con nervios, emocion y
+                muchisimas ganas de seguir conociendote.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="scrip.js"></script>
+  </body>
+</html>
