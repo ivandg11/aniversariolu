@@ -68,6 +68,26 @@ const memoryPlaceholder = document.getElementById('memoryPlaceholder');
 const spotifyCassette = document.getElementById('spotifyCassette');
 const pins = document.querySelectorAll('.memory-pin');
 
+function resetMemoryCard() {
+  memoryTitle.textContent = 'Aun no has abierto ningun recuerdo';
+  memoryDate.textContent = 'Toca un punto del mapa';
+  memoryDescription.textContent =
+    'Cada ubicacion guarda un momento especial y aparecera aqui cuando la selecciones.';
+  memoryImage.src = '';
+  memoryImage.alt = '';
+  memoryImage.hidden = true;
+  memoryCard.classList.add('memory-card--empty', 'memory-card--hidden');
+
+  if (memoryPlaceholder) {
+    memoryPlaceholder.hidden = false;
+  }
+
+  pins.forEach((pin) => {
+    pin.classList.remove('active');
+    pin.blur();
+  });
+}
+
 function renderMemory(index) {
   const memory = memories[index];
 
@@ -77,7 +97,7 @@ function renderMemory(index) {
   memoryImage.src = memory.image;
   memoryImage.alt = memory.alt;
   memoryImage.hidden = false;
-  memoryCard.classList.remove('memory-card--empty');
+  memoryCard.classList.remove('memory-card--empty', 'memory-card--hidden');
 
   if (memoryPlaceholder) {
     memoryPlaceholder.hidden = true;
@@ -108,3 +128,6 @@ pins.forEach((pin) => {
     renderMemory(Number(pin.dataset.memory));
   });
 });
+
+resetMemoryCard();
+window.addEventListener('pageshow', resetMemoryCard);

@@ -457,7 +457,6 @@ button {
   font-weight: 700;
 }
 
-.memory-pin:hover,
 .memory-pin.active {
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: #fff;
@@ -465,7 +464,6 @@ button {
   box-shadow: 0 22px 42px rgba(171, 73, 88, 0.3);
 }
 
-.memory-pin:hover::before,
 .memory-pin.active::before {
   background: linear-gradient(135deg, var(--gold), #fff2bf);
 }
@@ -488,6 +486,10 @@ button {
   backdrop-filter: blur(16px);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-strong);
+}
+
+.memory-card--hidden {
+  display: none;
 }
 
 .memory-card__media {
@@ -617,19 +619,36 @@ button {
 }
 
 @media (max-width: 640px) {
+  .memories__header {
+    margin-bottom: 22px;
+  }
+
+  .memories__header h2 {
+    margin-top: 14px;
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .memories__header p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
   .memories {
-    padding-top: 72px;
+    padding-top: 56px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .memory-map {
     min-height: 360px;
     aspect-ratio: 4 / 5;
+    border-radius: 28px;
   }
 
   .memory-pin {
     padding: 10px 12px 10px 10px;
     gap: 8px;
-    max-width: 44vw;
+    max-width: min(44vw, 170px);
   }
 
   .memory-pin::before {
@@ -667,6 +686,19 @@ button {
   .memory-card__media img,
   .cassette__code img {
     max-height: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .memory-pin:hover {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #fff;
+    transform: translate(-50%, -50%) scale(1.04);
+    box-shadow: 0 22px 42px rgba(171, 73, 88, 0.3);
+  }
+
+  .memory-pin:hover::before {
+    background: linear-gradient(135deg, var(--gold), #fff2bf);
   }
 }
 
