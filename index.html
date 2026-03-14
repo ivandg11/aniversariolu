@@ -68,7 +68,7 @@
             <div class="memory-map__background"></div>
 
             <button
-              class="memory-pin active"
+              class="memory-pin"
               type="button"
               data-memory="0"
               style="top: 15%; left: 28%"
@@ -131,22 +131,26 @@
             </button>
           </div>
 
-          <article class="memory-card" id="memoryCard">
+          <article class="memory-card memory-card--empty" id="memoryCard">
             <div class="memory-card__media">
               <img
                 id="memoryImage"
-                src="primera cita.png"
-                alt="Recuerdo juntos"
+                src=""
+                alt=""
+                hidden
               />
+              <div class="memory-card__placeholder" id="memoryPlaceholder">
+                Selecciona una ubicacion del mapa para ver el recuerdo.
+              </div>
             </div>
 
             <div class="memory-card__content">
               <div class="memory-card__label">Recuerdo destacado</div>
-              <h3 id="memoryTitle">Nuestra primera cita</h3>
-              <p class="memory-card__date" id="memoryDate">El inicio de todo</p>
+              <h3 id="memoryTitle">Aun no has abierto ningun recuerdo</h3>
+              <p class="memory-card__date" id="memoryDate">Toca un punto del mapa</p>
               <p id="memoryDescription">
-                Aqui comenzo esta historia tan bonita, con nervios, emocion y
-                muchisimas ganas de seguir conociendote.
+                Cada ubicacion guarda un momento especial y aparecera aqui cuando
+                la selecciones.
               </p>
             </div>
           </article>

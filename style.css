@@ -358,6 +358,7 @@ button {
 .memory-map {
   position: relative;
   min-height: 540px;
+  aspect-ratio: 16 / 10;
   border-radius: 34px;
   overflow: hidden;
   background:
@@ -510,6 +511,22 @@ button {
   border-radius: 18px;
 }
 
+.memory-card__placeholder {
+  max-width: 20ch;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.memory-card--empty .memory-card__media {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 251, 249, 0.98),
+    rgba(255, 241, 235, 0.92)
+  );
+}
+
 .memory-card__content {
   align-self: center;
   padding: 8px 4px;
@@ -605,34 +622,39 @@ button {
   }
 
   .memory-map {
-    min-height: auto;
-    padding: 18px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .memory-map__background {
-    display: none;
+    min-height: 360px;
+    aspect-ratio: 4 / 5;
   }
 
   .memory-pin {
-    position: static;
-    width: 100%;
-    justify-content: flex-start;
-    transform: none;
-    border-radius: 18px;
-    text-align: left;
+    padding: 10px 12px 10px 10px;
+    gap: 8px;
+    max-width: 44vw;
+  }
+
+  .memory-pin::before {
+    width: 18px;
+    height: 18px;
+  }
+
+  .memory-pin::after {
+    left: 15px;
+    width: 6px;
+    height: 6px;
+  }
+
+  .memory-pin span {
+    font-size: 0.72rem;
+    line-height: 1.2;
   }
 
   .memory-pin:hover,
   .memory-pin.active {
-    transform: none;
+    transform: translate(-50%, -50%) scale(1.03);
   }
 
   .memory-card {
     width: 100%;
-    margin-top: 18px;
     padding: 18px;
     border-radius: 24px;
   }

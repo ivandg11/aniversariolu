@@ -64,6 +64,7 @@ const memoryDate = document.getElementById('memoryDate');
 const memoryDescription = document.getElementById('memoryDescription');
 const memoryCard = document.getElementById('memoryCard');
 const memoryImage = document.getElementById('memoryImage');
+const memoryPlaceholder = document.getElementById('memoryPlaceholder');
 const spotifyCassette = document.getElementById('spotifyCassette');
 const pins = document.querySelectorAll('.memory-pin');
 
@@ -75,6 +76,12 @@ function renderMemory(index) {
   memoryDescription.textContent = memory.description;
   memoryImage.src = memory.image;
   memoryImage.alt = memory.alt;
+  memoryImage.hidden = false;
+  memoryCard.classList.remove('memory-card--empty');
+
+  if (memoryPlaceholder) {
+    memoryPlaceholder.hidden = true;
+  }
 
   memoryCard.classList.remove('reveal');
   void memoryCard.offsetWidth;
@@ -101,5 +108,3 @@ pins.forEach((pin) => {
     renderMemory(Number(pin.dataset.memory));
   });
 });
-
-renderMemory(0);
